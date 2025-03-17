@@ -1,0 +1,58 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #1a1a1a;
+}
+
+.candle {
+    position: relative;
+    width: 50px;
+    height: 150px;
+    background-color: #fff;
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
+}
+
+.wax {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 90%;
+    background-color: #f0e68c;
+    border-radius: 10px 10px 0 0;
+}
+
+.wick {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 4px;
+    height: 20px;
+    background-color: #8b4513;
+}
+
+.flame {
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 60px;
+    background-color: #ff4500;
+    border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+    animation: flicker 0.1s infinite alternate;
+    box-shadow: 0 0 20px rgba(255, 69, 0, 0.8);
+}
+
+@keyframes flicker {
+    0% {
+        transform: translateX(-50%) scaleY(1);
+    }
+    100% {
+        transform: translateX(-50%) scaleY(1.1);
+    }
+}

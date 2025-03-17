@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vela Animada</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #222;
+        }
+        .candle {
+            position: relative;
+            width: 20px;
+            height: 60px;
+            background-color: #d4a373;
+            border-radius: 5px;
+        }
+        .flame {
+            position: absolute;
+            top: -20px;
+            left: 50%;
+            width: 15px;
+            height: 25px;
+            background-color: orange;
+            border-radius: 50%;
+            transform: translateX(-50%);
+            box-shadow: 0 0 15px rgba(255, 165, 0, 0.8);
+            animation: flicker 1s infinite alternate ease-in-out;
+        }
+        @keyframes flicker {
+            0% {
+                transform: translateX(-50%) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateX(-48%) scale(1.1);
+                opacity: 0.9;
+            }
+            100% {
+                transform: translateX(-52%) scale(1);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="candle">
+        <div class="flame"></div>
+    </div>
+</body>
+</html>
